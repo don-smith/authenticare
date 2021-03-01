@@ -1,7 +1,7 @@
 {
   "name": "authenticare-example",
   "description": "An example of how to use the npm authenticare package",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "scripts": {
     "dev": "run-p dev:server dev:client",
@@ -40,6 +40,7 @@
     "@babel/plugin-transform-runtime": "^7.12.15",
     "@babel/preset-env": "^7.12.16",
     "@babel/preset-react": "^7.12.13",
+    "@sendgrid/mail": "^7.4.2",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.0",

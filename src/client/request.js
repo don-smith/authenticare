@@ -1,6 +1,6 @@
 import consume from './consume'
-import endpoints from '../endpoints'
 import { saveAuthToken } from './auth'
+import endpoints from '../shared/endpoints'
 
 export default function (endpoint, data, request = consume) {
   const headers = {
@@ -41,7 +41,7 @@ function verifyData (data) {
     throw new Error('Data parameter is required')
   }
 
-  if (!data.username) {
-    throw new Error('Data parameter must have a username property')
+  if (!data.username && !data.email) {
+    throw new Error('Data parameter must have either a username or email property')
   }
 }

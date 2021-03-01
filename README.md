@@ -6,6 +6,12 @@ You can find an example fullstack application in the `example` folder.
 
 You can find the docs for the most important functions exported for both client-side and server-side use in the `docs` folder.
 
+## Version `0.5.0`
+
+* Add password reset feature (includes basis of 2FA: sending emails)
+* Remove deprecated `server/decodeToken` in lieu of `server/getTokenDecoder`
+
+
 ## Version `0.4.9`
 
 * Improved the error message coming from the client `register` and `signIn` functions

@@ -3,4 +3,5 @@ node_modules
 # Build output
 /client
 /server
+/shared
 /endpoints.js

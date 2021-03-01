@@ -4,7 +4,8 @@ const { generateHash } = require('authenticare/server')
 module.exports = {
   createUser,
   userExists,
-  getUserByName
+  getUserByName,
+  getUserByEmail
 }
 
 function createUser (user, db = connection) {
@@ -17,7 +18,11 @@ function createUser (user, db = connection) {
     })
     .then(() => generateHash(user.password))
     .then(passwordHash => {
-      return db('users').insert({ username: user.username, hash: passwordHash })
+      return db('users').insert({
+        email: user.email,
+        username: user.username,
+        hash: passwordHash
+      })
     })
 }
 
@@ -34,5 +39,12 @@ function getUserByName (username, db = connection) {
   return db('users')
     .select()
     .where('username', username)
+    .first()
+}
+
+function getUserByEmail (email, db = connection) {
+  return db('users')
+    .select()
+    .where('email', email)
     .first()
 }

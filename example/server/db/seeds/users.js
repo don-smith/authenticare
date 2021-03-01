@@ -8,8 +8,8 @@ exports.seed = (knex) => {
     ]))
     .then(([jessHash, julesHash]) =>
       knex('users').insert([
-        { id: 1, username: 'jess', hash: jessHash },
-        { id: 2, username: 'jules', hash: julesHash }
+        { id: 1, username: 'jess', email: 'jess@email.com', hash: jessHash },
+        { id: 2, username: 'jules', email: 'jules@email.com', hash: julesHash }
       ])
     )
 }

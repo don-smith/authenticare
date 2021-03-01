@@ -16,11 +16,17 @@ export const ColTwo = styled.input`
 `
 
 export const Button = styled.button`
+  display: block;
   grid-column: 2;
   width: 50%;
 `
 
 export const Error = styled.div`
   color: red;
+  cursor: pointer;
+`
+
+export const Info = styled.div`
+  color: green;
   cursor: pointer;
 `

@@ -3,7 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const request = require('supertest')
 
-const endpoints = require('../endpoints')
+const endpoints = require('../shared/endpoints')
 
 const functions = {
   getUserByName: () => Promise.resolve({

@@ -1,6 +1,6 @@
 import * as auth from './auth'
 import request from './request'
-import { signInUrl } from '../endpoints'
+import { signInUrl } from '../shared/endpoints'
 
 jest.mock('./auth')
 
@@ -76,7 +76,7 @@ describe('the request function', () => {
     return request(signInUrl, {})
       .then(() => { return null /* should not get here */ })
       .catch(err => {
-        expect(err.message).toMatch('must have a username property')
+        expect(err.message).toMatch('must have either a username or email property')
       })
   })
 })

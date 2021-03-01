@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { signIn, isAuthenticated } from 'authenticare/client'
 
 import { baseApiUrl as baseUrl } from '../config'
@@ -63,6 +64,10 @@ function SignIn (props) {
           autocomplete='current-password' />
 
         <Button>Sign in</Button>
+
+        <Link style={{ gridColumn: 2 }} to='/reset-password'>
+          Forgot password
+        </Link>
       </GridForm>
     </>
   )

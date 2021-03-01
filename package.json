@@ -1,6 +1,6 @@
 {
   "name": "authenticare",
-  "version": "0.4.9",
+  "version": "0.5.0",
   "description": "A JWT helper library for full-stack Node apps",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,7 @@
   ],
   "author": "Enspiral Dev Academy <hello@devacademy.co.nz>",
   "license": "MIT",
+  "homepage": "https://github.com/enspiral-dev-academy/authenticare#readme",
   "bugs": {
     "url": "https://github.com/enspiral-dev-academy/authenticare/issues"
   },
@@ -44,7 +45,6 @@
       "example"
     ]
   },
-  "homepage": "https://github.com/enspiral-dev-academy/authenticare#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

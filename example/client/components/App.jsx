@@ -5,6 +5,7 @@ import Nav from './Nav'
 import Fruits from './Fruits'
 import Register from './Register'
 import SignIn from './SignIn'
+import ResetPassword from './ResetPassword'
 
 export default function App () {
   return (
@@ -13,6 +14,7 @@ export default function App () {
       <Route exact path='/' component={Fruits} />
       <Route path='/register' component={Register} />
       <Route path='/signin' component={SignIn} />
+      <Route path='/reset-password' component={ResetPassword} />
     </Router>
   )
 }

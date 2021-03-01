@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { register, isAuthenticated } from 'authenticare/client'
 
 import { baseApiUrl as baseUrl } from '../config'
@@ -8,7 +9,8 @@ function Register (props) {
   const [error, setError] = useState('')
   const [form, setForm] = useState({
     username: '',
-    password: ''
+    password: '',
+    email: ''
   })
 
   const hideError = () => {
@@ -25,8 +27,8 @@ function Register (props) {
 
   function handleSubmit (e) {
     e.preventDefault()
-    const { username, password } = form
-    return register({ username, password }, { baseUrl })
+    const { username, email, password } = form
+    return register({ username, email, password }, { baseUrl })
       .then((token) => {
         if (isAuthenticated()) {
           props.history.push('/')
@@ -54,6 +56,13 @@ function Register (props) {
           value={form.username}
           onChange={handleChange} />
 
+        <ColOne htmlFor='email'>Email:</ColOne>
+        <ColTwo type='text' required
+          id='email'
+          name='email'
+          value={form.email}
+          onChange={handleChange} />
+
         <ColOne htmlFor='password'>Password:</ColOne>
         <ColTwo type='password' required
           id='password'
@@ -63,6 +72,10 @@ function Register (props) {
           autocomplete='new-password' />
 
         <Button>Register</Button>
+
+        <Link style={{ gridColumn: 2 }} to='/reset-password'>
+          Forgot password
+        </Link>
       </GridForm>
     </>
   )

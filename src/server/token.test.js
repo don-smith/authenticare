@@ -112,29 +112,6 @@ describe('token', () => {
     expect(testToken.expires.expiresIn).toBe('1d')
   })
 
-  it('decode invokes the express-jwt middleware function', () => {
-    expect.assertions(5)
-
-    jest.mock('express-jwt', () => {
-      return ({ secret }) => {
-        expect(typeof secret).toBe('function')
-
-        return (req, res, next) => {
-          expect(req).toBe('req')
-          expect(res).toBe('res')
-          expect(next).toBe('next')
-        }
-      }
-    })
-    jest.spyOn(console, 'warn').mockImplementation(() => {})
-
-    const token = require('./token')
-
-    token.decode('req', 'res', 'next')
-    expect(console.warn).toHaveBeenCalled()
-    console.warn.mockRestore()
-  })
-
   it('createToken returns a signed token', () => {
     jest.mock('jsonwebtoken', () => ({
       sign: () => 'test-token'
